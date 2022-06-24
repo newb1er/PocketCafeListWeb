@@ -71,11 +71,14 @@
 <script lang="tsx" setup>
 import { ElCollapse, ElCollapseItem, ElRow, ElRate } from 'element-plus'
 import { IListItem } from '@/composables/IListItem'
+import { useHeader } from '~~/composables/useHeader'
 
 const loading = ref(false)
+const header = useHeader()
 </script>
 
 <script lang="tsx">
+import { getUserInfo } from '~~/api/user'
 import { getSavedList } from '@/api/saved'
 import { cities } from '~~/utils/cityMapping'
 
@@ -98,11 +101,13 @@ export default {
     this.loading = true
     this.userId = this.$route.params.id
 
-    const res = await getSavedList(this.userId)
+    const list = await getSavedList(this.userId)
+    const user = await getUserInfo(this.userId)
 
-    console.log(res)
+    console.log(user)
+    this.header = `-- ${user.data.displayname} 的收藏`
 
-    this.infos = res.data
+    this.infos = list.data
     this.loading = false
   },
   methods: {
