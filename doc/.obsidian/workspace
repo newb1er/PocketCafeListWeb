@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "18846996e00eb569",
+    "type": "split",
+    "children": [
+      {
+        "id": "e0c1b430dd2d959c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "開發流程.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c5e7cd9cb208dfa3",
+    "type": "split",
+    "children": [
+      {
+        "id": "2b533ee540694532",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7f85d37a7022d00e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "c1bcb316d9d9d968",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "805e32d3092d469b",
+    "type": "split",
+    "children": [
+      {
+        "id": "1f6a8557c41d3cb4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ae6c440896b72e61",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "開發流程.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "e0c1b430dd2d959c",
+  "lastOpenFiles": [
+    "開發流程.md"
+  ]
+}
