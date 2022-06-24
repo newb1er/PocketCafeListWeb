@@ -1,0 +1,20 @@
+export const cities ={
+        "taipei": "台北",
+        "hsinchu": "新竹",
+        "tainan": "台南",
+        "hualien": "花蓮",
+        "kaohsiung": "高雄",
+        "yunlin": "雲林",
+        "penghu": "澎湖",
+        "changhua": "彰化",
+        "keelung": "基隆",
+        "pingtung": "屏東",
+        "chiayi": "嘉義",
+        "taichung": "台中",
+        "taoyuan": "桃園",
+        "taitung": "台東",
+        "nantou": "南投",
+        "lienchiang": "連江",
+        "miaoli": "苗栗",
+        "yilan": "宜蘭"
+}
