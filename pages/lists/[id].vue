@@ -101,13 +101,15 @@ export default {
     this.loading = true
     this.userId = this.$route.params.id
 
-    const list = await getSavedList(this.userId)
-    const user = await getUserInfo(this.userId)
+    const { $api } = useNuxtApp()
 
-    console.log(user)
-    this.header = `-- ${user.data.displayname} 的收藏`
+    const api = $api()
 
-    this.infos = list.data
+    this.infos = await api.getSavedList(this.userId)
+    const user = await api.getUserInfo(this.userId)
+
+    this.header = `-- ${user.displayname} 的收藏`
+
     this.loading = false
   },
   methods: {

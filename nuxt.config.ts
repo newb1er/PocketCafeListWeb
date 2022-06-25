@@ -18,5 +18,11 @@ export default defineNuxtConfig({
         "~/assets/scss/index.scss"
     ],
 
-    components: true
+    components: true,
+
+    runtimeConfig: {
+        public: {
+            apiBase: ''
+        }
+    }
 })
