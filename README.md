@@ -17,6 +17,13 @@ npm install
 pnpm install --shamefully-hoist
 ```
 
+## Env Variables
+
+`.env`
+```
+NUXT_PUBLIC_API_BASE = "<API_URL>"
+```
+
 ## Development Server
 
 Start the development server on http://localhost:3000
