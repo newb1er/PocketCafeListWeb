@@ -2,21 +2,31 @@
   <div v-if="!loading">
     <el-collapse>
       <el-collapse-item v-for="(info, index) in infos" :title="info.name" :key="index">
-        <el-row class="flex">
-          <span>
+        <h2 class="heading">
+          {{info.name}}
+        </h2>
+        <el-tag>
             {{ cityMap(info.city) }}
+        </el-tag>
+        <el-row>
+          <span class="label">
+           收藏日期:
+          </span>
+          <div>
+            {{ dateParse(info.add_date) }}  
+          </div>
+        </el-row>
+        <el-row>
+          <span class="label">
+            地址:
+          </span>
+          <span>
+            {{ info.address }}
           </span>
         </el-row>
+
         <el-row>
-          <span>新增時間:</span>
-          {{ dateParse(info.add_date) }}
-        </el-row>
-        <el-row>
-          <span class="text">網站: {{ info.url }}</span>
-        </el-row>
-        <el-row>地址: {{ info.address }}</el-row>
-        <el-row>
-          <span class="text">WiFi: </span>
+          <span class="label">WiFi: </span>
           <el-rate
             v-model="info.wifi"
             disabled
@@ -24,7 +34,7 @@
           />
         </el-row>
         <el-row>
-          <span class="text">Seat: </span>
+          <span class="label">Seat: </span>
           <el-rate
             v-model="info.seat"
             disabled
@@ -32,7 +42,7 @@
           />
         </el-row>
         <el-row>
-          <span class="text">Quiet: </span>
+          <span class="label">Quiet: </span>
           <el-rate
             v-model="info.quiet"
             disabled
@@ -40,7 +50,7 @@
           />
         </el-row>
         <el-row>
-          <span class="text">Tasty: </span>
+          <span class="label">Tasty: </span>
           <el-rate
             v-model="info.tasty"
             disabled
@@ -48,7 +58,7 @@
           />
         </el-row>
         <el-row>
-          <span class="text">Cheap: </span>
+          <span class="label">Cheap: </span>
           <el-rate
             v-model="info.cheap"
             disabled
@@ -56,12 +66,25 @@
           />
         </el-row>
         <el-row>
-          <span class="text">Music: </span>
+          <span class="label">Music: </span>
           <el-rate
             v-model="info.music"
             disabled
             show-score
           />
+        </el-row>
+
+        <el-row>
+          <a :href="info.url" v-if="info.url" class="official-site">
+            <el-button>
+              官方網站
+            </el-button>
+          </a>
+          <a :href="`https://cafenomad.tw/shop/${info.id}`">
+            <el-button>
+              Cafe Nomad 連結
+            </el-button>
+          </a>
         </el-row>
       </el-collapse-item>
     </el-collapse>
@@ -69,7 +92,7 @@
 </template>
 
 <script lang="tsx" setup>
-import { ElCollapse, ElCollapseItem, ElRow, ElRate } from 'element-plus'
+import { ElCollapse, ElCollapseItem, ElRow, ElCol, ElRate, ElButton, ElTag } from 'element-plus'
 import { IListItem } from '@/composables/IListItem'
 import { useHeader } from '~~/composables/useHeader'
 
@@ -135,5 +158,22 @@ export default {
 .flex {
   display: "flex";
   flex: 1;
+}
+
+.heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.label {
+  font-size: 0.9rem;
+  width: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.official-site {
+  margin-right: 1rem;
 }
 </style>
